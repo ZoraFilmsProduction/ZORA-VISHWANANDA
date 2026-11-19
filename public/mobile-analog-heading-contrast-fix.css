@@ -1,0 +1,26 @@
+/* Targeted mobile-only fix: keep the "Analog softness, digital precision" heading
+   readable as the section's existing bottom-up light background wipe passes it.
+   The black overlay follows the same --wipe-at boundary already used by the
+   corrected body paragraph. Desktop styling and scroll behavior are unchanged. */
+@media (max-width: 767px) {
+  .first-build-page .intro-section h2.water-text {
+    position: relative;
+  }
+
+  .first-build-page .intro-section h2.water-text::after {
+    content: "Analog softness,\A digital precision";
+    display: block;
+    position: absolute;
+    inset: 0;
+    color: var(--statement-ink);
+    -webkit-text-fill-color: var(--statement-ink);
+    white-space: pre-line;
+    text-align: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    line-height: inherit;
+    clip-path: inset(max(0px, var(--wipe-at, 99999px)) 0 0 0);
+    pointer-events: none;
+  }
+}

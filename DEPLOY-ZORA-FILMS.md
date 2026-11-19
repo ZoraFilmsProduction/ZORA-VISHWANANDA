@@ -2,10 +2,12 @@
 
 ## Ovaj paket
 
-- Verzija stranice: **Lovable v8**.
+- Verzija stranice: **Lovable v8 + ciljani popravak mobilnog naslova Analog softness, digital precision**.
 - Izvorni ZIP SHA-256: `39f8030034aa57d5c96982489e7e22e9eb59cf40602a79b050d6dd2518c3ed37`.
-- Sve datoteke stranice preuzete su iz izvornog v8 ZIP-a **bez ikakve promjene sadržaja ili koda**.
-- Promijenjen je samo raspored: kompletan gotov statički build nalazi se unutar `public/`.
+- Izvorne JavaScript, CSS, video, slikovne i font datoteke v8 ostale su **nepromijenjene**.
+- Jedina funkcionalna izmjena je nova mobilna CSS datoteka `public/mobile-analog-heading-contrast-fix.css`, učitana iz 13 HTML stranica. Ona prikazuje crni sloj naslova na dijelu preko kojeg je prošla svijetla pozadina, koristeći postojeću scroll varijablu `--wipe-at`.
+- Na desktopu se novi stil ne primjenjuje; svi ostali elementi stranice ostaju kao u v8.
+- Cijeli gotov statički build nalazi se unutar `public/`.
 - `ORIGINAL-VERIFY-SHA256.txt` sadrži kontrolne zbrojeve svih datoteka stranice.
 
 ## Struktura za postojeći GitHub repozitorij
