@@ -1,15 +1,14 @@
 # ZORA FILMS — GitHub + Cloudflare Pages
 
-## Verzija
+## Ovaj paket
 
-- Paket: Zora Films v6 — potpuno spreman statički build.
-- Izvorni Lovable ZIP (SHA-256): `8899cf0b53439e427d205b74c1251d10c861e2ac5f8154356d4088ab3c21370e`
-- Jedina ciljana izmjena na izvozu: mobilna navigacija prikazuje **Gallery**.
-- Sadržaj mape `public/`: 431 datoteka.
+- Verzija stranice: **Lovable v8**.
+- Izvorni ZIP SHA-256: `39f8030034aa57d5c96982489e7e22e9eb59cf40602a79b050d6dd2518c3ed37`.
+- Sve datoteke stranice preuzete su iz izvornog v8 ZIP-a **bez ikakve promjene sadržaja ili koda**.
+- Promijenjen je samo raspored: kompletan gotov statički build nalazi se unutar `public/`.
+- `ORIGINAL-VERIFY-SHA256.txt` sadrži kontrolne zbrojeve svih datoteka stranice.
 
-## GitHub struktura
-
-Ovaj paket sadrži sva tri elementa u korijenu repozitorija:
+## Struktura za postojeći GitHub repozitorij
 
 ```text
 DEPLOY-ZORA-FILMS.md
@@ -17,32 +16,33 @@ ORIGINAL-VERIFY-SHA256.txt
 public/
 ```
 
-## Zamjena postojećeg sadržaja
+## Potpuna zamjena postojeće verzije
 
-1. Raspakiraj ZIP.
-2. Otvori lokalnu mapu postojećeg GitHub repozitorija `Zora-Guruji`.
-3. Zamijeni **samo tri gornja elementa** novima iz raspakiranog ZIP-a. Ne kopiraj cijeli ZIP unutar mape `public`.
-4. **Ne briši skriveni `.git` direktorij** — on čuva vezu s repozitorijem.
+1. Raspakiraj ovaj ZIP.
+2. U GitHub Desktopu otvori lokalni repozitorij `Zora-Guruji` (Repository → Show in Finder).
+3. U toj mapi zamijeni **sva tri vidljiva postojeća elementa** istim elementima iz ovog ZIP-a.
+4. **Ne briši skrivenu mapu `.git`** — ona čuva vezu s GitHub repozitorijem.
 5. U GitHub Desktopu napravi **Commit to main → Push origin**.
 
-## Postavke Cloudflare Pages
+Nemoj kopirati ZIP u mapu `public/`, niti stvarati dvostruku mapu `public/public/`.
 
-- Project: `zora-guruji`
-- Production branch: `main`
+## Postojeće postavke Cloudflare Pages
+
+- Projekt: `zora-guruji`
+- Produkcijska grana: `main`
 - Framework preset: `None`
 - Build command: `exit 0`
 - Build output directory: `public`
 
-Datoteke u `public/` već su izgrađene; **nije potreban npm install ni npm build**. Cloudflare Pages automatski objavljuje novu verziju nakon pushanja.
+Build je već gotov: ne treba `npm install`, `npm run build` ni promjena konfiguracije.
+Ne mijenjaj DNS, domenu ili e-mail zapise.
 
-Ne mijenjaj DNS, domene ni e-mail zapise.
+## Neobavezna kontrola identičnosti
 
-## Provjera datoteka (opcionalno)
-
-`ORIGINAL-VERIFY-SHA256.txt` sadrži SHA-256 kontrolne vrijednosti datoteka unutar `public/` za ovu završnu verziju. Iz korijena repozitorija može se provjeriti naredbom:
+Iz korijena repozitorija:
 
 ```bash
 sha256sum -c ORIGINAL-VERIFY-SHA256.txt
 ```
 
-Ova provjera nije uvjet za deployment.
+Provjera nije uvjet za deployment. Ovaj dokument i popis kontrolnih zbrojeva služe samo kao upute i dokaz o sadržaju.
